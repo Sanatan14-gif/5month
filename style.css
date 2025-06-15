@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+}
+
+.heart-container {
+    font-size: 3rem;
+    margin: 1rem 0;
+    animation: pulse 1.5s infinite;
+}
+
+.reason-box {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px dashed #ff6b6b;
+}
+
+button {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+button:hover {
+    background: #ff4757;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+/* Previous CSS remains the same, just add these new rules at the end */
+
+.anniversary {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    color: #ff6b6b;
+    font-weight: 600;
+    font-family: 'Pacifico', cursive;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Flying hearts animation */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: fly 4s linear forwards;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Background pulse on click */
+@keyframes bgPulse {
+    0% { background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); }
+    50% { background: linear-gradient(135deg, #fad0c4 0%, #ff9a9e 100%); }
+    100% { background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); }
+}
+
+body.pulse {
+    animation: bgPulse 1s ease;
+}
